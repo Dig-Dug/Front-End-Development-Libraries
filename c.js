@@ -279,9 +279,142 @@ const List = (props) => {
           { /* Change code below this line */ }
           <List/>
           <h2>Tomorrow</h2>
-          <List taks= />
+          <List taks= {}/>
           { /* Change code above this line */ }
         </div>
       );
     }
   };
+
+//Use Default Props___________________
+
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+// Change code below this line
+ShoppingCart.defaultProps = {  
+  items : 0
+}
+
+//Override Default Props___________________
+
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+}
+
+Items.defaultProps = {
+  quantity: 0
+}
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    { /* Change code below this line */ }
+    return <Items
+    quantity = {10} 
+    />
+    { /* Change code above this line */ }
+  }
+};
+
+
+//Use PropTypes to Define the Props You Expect___________________
+
+//MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
+//https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+//import PropTypes from 'prop-types';
+
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+Items.propTypes = {quantity: PropTypes.number.isRequired}
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+
+//Access Props Using this.props___________________
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome {...this.props.name = ""}   />
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello, <strong></strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+//Review Using Props with Stateless Functional Components___________________
+
+/**A stateless functional component is any function you 
+write which accepts props and returns JSX. A stateless 
+component, on the other hand, is a class that extends
+React.Component, but does not use internal state
+Finally, a stateful component is a class component 
+that does maintain its own internal state. */
+
+
+
+
+//Create a Stateful Component___________________
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+this.state = {name}
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+
+
+
