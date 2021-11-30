@@ -250,7 +250,81 @@ class MagicEightBall extends React.Component {
   }
 }
 
+///////Render with an If-Else Condition-----------------
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState((state) => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line //please outside the return
+if(this.state.display == true){
+<div>    <button onClick={this.toggleDisplay}>Toggle Display</button>
+     <h1>Displayed!</h1>
+       </div>
+} else{
+console.log("3");
+ <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+        
+       </div>
+}
+    return (
+        <div>
+          <button onClick={this.toggleDisplay}>Toggle Display</button>
+     
+       </div> 
+    );
+  }
+};
+
+/**if (isLoggedIn) {
+  button = <LogoutButton onClick={this.handleLogoutClick} />;
+} else {
+  button = <LoginButton onClick={this.handleLoginClick} />;
+}
+
+return (
+  <div>
+    <Greeting isLoggedIn={isLoggedIn} />
+    {button}
+  </div>
+); */
 
 
-
-
+//Use && for a More Concise Conditional------
+/* class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState(state => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+    {this.state.display  && <div> <button onClick={this.toggleDisplay}>Toggle Display</button><div>}
+    { this.state.display && <div> <button onClick={this.toggleDisplay}>Toggle Display</button><h1>Displayed!</h1></div>}      
+   
+    return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+       
+       </div>
+    );
+  }
+}; */
