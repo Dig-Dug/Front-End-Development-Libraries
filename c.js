@@ -362,7 +362,11 @@ class App extends React.Component {
     return (
         <div>
             { /* Change code below this line */ }
-            <Welcome {...this.props.name = ""}   />
+            {/**const name= {
+    this.namee = "Hello Kitty"
+  };
+  <Welcome name ={this.props.namee} />; */}
+                       <Welcome name="Sara" />;
             { /* Change code above this line */ }
         </div>
     );
