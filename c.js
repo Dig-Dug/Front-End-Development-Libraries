@@ -261,10 +261,11 @@ const CurrentDate = (props) => {
 /**<ParentComponent>
   <ChildComponent colors={["green", "blue", "red"]} />
 </ParentComponent> */
+
 const List = (props) => {
   { /* Change code below this line */ }
-  var tasks  = ["walk dog", "workout"];
-   return   <p> {[tasks]}</p>
+ 
+ return <p>{props.tasks.join(', ')}</p>
   { /* Change code above this line */ }
 };
 
@@ -278,9 +279,10 @@ class ToDo extends React.Component {
         <h1>To Do Lists</h1>
         <h2>Today</h2>
         { /* Change code below this line */ }
-        <List somProp={[this.props.tasks]} />
-        <h2 >Tomorrow</h2>
-        <List />
+        
+         <List tasks={["walk dog", "workout"]}/>
+        <h2>Tomorrow</h2>
+        <List tasks={["walk dog", "workout","wolk dog"]}/>
         { /* Change code above this line */ }
       </div>
     );
@@ -362,11 +364,7 @@ class App extends React.Component {
     return (
         <div>
             { /* Change code below this line */ }
-            {/**const name= {
-    this.namee = "Hello Kitty"
-  };
-  <Welcome name ={this.props.namee} />; */}
-                       <Welcome name="Sara" />;
+            <Welcome name="Sara"/>;
             { /* Change code above this line */ }
         </div>
     );
@@ -382,7 +380,7 @@ class Welcome extends React.Component {
     return (
         <div>
           { /* Change code below this line */ }
-          <p>Hello, <strong></strong>!</p>
+          <p>Hello, <strong >{this.props.name}</strong>!</p>
           { /* Change code above this line */ }
         </div>
     );
@@ -398,6 +396,30 @@ React.Component, but does not use internal state
 Finally, a stateful component is a class component 
 that does maintain its own internal state. */
 
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper />
+      </div>
+    );
+  }
+};
+// Change code below this line
+const Camper = (props) => {
+  return (
+    <p>{props.name}</p>
+  );
+}
+Camper.defaultProps = {
+  name: 'CamperBot'
+}
+Camper.propTypes = { name: PropTypes.string.isRequired }
+
+
 
 
 
@@ -406,7 +428,7 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     // Only change code below this line
-this.state = {name}
+this.state = {name}  // <- worked there!!!
     // Only change code above this line
   }
   render() {
@@ -418,7 +440,79 @@ this.state = {name}
   }
 };
 
+//Render State in the User Interface
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
 
+//Render State in the User Interface Another Way
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    // Change code below this line
+const name = this.state.name;
+console.log(name)
+    // Change code above this line
+    return (
+      <div>
+        { /* Change code below this line */ }
+<h1>{name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+//Use State to Toggle an Element___________________
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  // Change code below this line
+
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
 
 
 
