@@ -490,11 +490,16 @@ class MyComponent extends React.Component {
       visibility: false
     };
     // Change code below this line
-
+    this.toggleVisibility = this.toggleVisibility.bind(this);
     // Change code above this line
   }
   // Change code below this line
-
+  toggleVisibility() {
+    this.setState(prevState => ({
+       visibility: !prevState.visibility
+     }));
+     console.log('You clicked submit.');
+   }
   // Change code above this line
   render() {
     if (this.state.visibility) {
