@@ -246,7 +246,7 @@ class MyComponent extends React.Component {
     }
     handleSubmit(event) {
       // Change code below this line
-  this.setState({ input : event.target.submit})  
+  this.setState({ input : event.target.value})  
         
    event.preventDefault();
   
