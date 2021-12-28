@@ -123,3 +123,119 @@ const defaultState = {
   };
 
   //Use const for Action Types-------------------
+  
+
+
+
+  const defaultState = {
+    authenticated: false
+  };
+  
+  const authReducer = (state = defaultState, action) => {
+  
+    switch (action.type) {
+      case LOGIN: 
+        return {
+          authenticated: true
+        }
+      case LOGOUT: 
+        return {
+          authenticated: false
+        }
+  
+      default:
+        return state;
+  
+    }
+  
+  };
+  const LOGIN = 'LOGIN';
+    const LOGOUT = 'LOGOUT';
+  const store = Redux.createStore(authReducer);
+  
+  const loginUser = () => {
+    return {
+      type: LOGIN
+    }
+  };
+  
+  const logoutUser = () => {
+    return {
+      type: LOGOUT
+    }
+  };
+
+
+  //Register a Store Listener-------------------------
+  const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+const unsubscribe = store.subscribe(reducer)
+unsubscribe(count += 1)
+// Change code above this line
+
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+
+
+//Combine Multiple Reducers---------------------
+/**const rootReducer = Redux.combineReducers({
+  auth: authenticationReducer,
+  notes: notesReducer
+}); */
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = // Define the root reducer here
+Redux.combineReducers({
+  count: counterReducer ,
+  auth: authReducer 
+});
+const store = Redux.createStore(rootReducer);
