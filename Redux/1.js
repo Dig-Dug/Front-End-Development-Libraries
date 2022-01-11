@@ -232,10 +232,40 @@ const authReducer = (state = {authenticated: false}, action) => {
       return state;
   }
 };
-
-const rootReducer = // Define the root reducer here
-Redux.combineReducers({
+ // Define the root reducer here
+const rootReducer = Redux.combineReducers({
   count: counterReducer ,
   auth: authReducer 
 });
+/////////////////////
 const store = Redux.createStore(rootReducer);
+
+//Send Action Data to the Store----------------------------
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
+      case  ADD_NOTE: 
+      return addNoteText;
+    
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+  note  = {
+    type : note,
+    text :'ioi9i'} 
+    
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState());
