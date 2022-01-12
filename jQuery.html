@@ -106,3 +106,58 @@ $("#target4").html("<em>#target4</em>"); //em emphasize text
 
 
 <!-- Remove an Element Using jQuery -->
+<script>
+  $(document).ready(function() {
+    $("#target4").remove();
+  });
+</script>
+
+
+<!-- Use appendTo to Move Elements with jQuery -->
+<script>
+  $(document).ready(function() {
+      $("#target2").appendTo("#right-well") 
+  });
+</script>
+
+<!-- Clone an Element Using jQuery -->
+<script>
+  $(document).ready(function() {
+       $("#target5").clone().appendTo("#left-well")
+  });
+</script>
+
+<!-- Target the Parent of an Element Using jQuery -->
+<script>
+  $(document).ready(function() {
+$("#target1").parent().css("background-color", "red") 
+  });
+</script>
+
+
+<!-- Target the Children of an Element Using jQuery -->
+<script>
+  $(document).ready(function() {
+    $("#right-well").children().css("color", "orange")
+  });
+</script>
+
+<!-- Target a Specific Child of an Element Using jQuery -->
+<script>
+  $(document).ready(function() {
+    $(".target:nth-child(2)").addClass("animated bounce");});
+</script>
+
+<!-- Target Even Elements Using jQuery -->
+<script>
+  $(document).ready(function() {
+      $(".target:even").addClass("animated shake")
+  });
+</script>
+
+<!-- Use jQuery to Modify the Entire Page -->
+<script>
+  $(document).ready(function() {
+       $("body").addClass("animated hinge") //fadeOut--etc
+  });
+</script>
