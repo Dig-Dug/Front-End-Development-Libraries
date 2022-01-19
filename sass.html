@@ -1,0 +1,71 @@
+
+  <!--Store Data with Sass Variables, Sass, variables start
+  with a $ -->
+ 
+
+$text-color: red; <--variable
+  
+.header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color; <-- use
+  }
+ 
+
+  <!--Nest CSS with Sass-->
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+     }
+     p {
+        font-size: 20px;
+      }
+  }
+  
+
+<!--Create Reusable CSS with Mixins-->
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+@include border-radius(15px)  <--calling a mixon
+}
+
+<!--Use @if and @else to Add Logic To Your Styles-->
+
+<!--Create a mixin called border-stroke that takes a parameter $val.
+The mixin should check for the following conditions using @if, 
+@else if, and @else:
+
+light - 1px solid black
+medium - 3px solid black
+heavy - 6px solid black
+If $val is not light, medium, or heavy, the border should be set to none.-->
+@mixin border-stroke($val){
+  @if $val == light { border: 1px solid black} 
+  @else if $val == medium { border: 3px solid black}
+  @else if $val == heavy{border: 6px solid black}
+  @else {border: none}
+}
+
+<!--Use @for to Create a Sass Loop-->
+
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+
+@for $j from 1 to 6 {
+  .text-#{$j} {font-size: 15px * $j;}
+}
+
+
+<!--Use @each to Map Over Items in a List-->

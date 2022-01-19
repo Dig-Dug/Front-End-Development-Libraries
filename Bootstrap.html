@@ -32,11 +32,14 @@
 
 <!-- Use the Bootstrap Grid to Put Elements Side By Side -->
 <div class="row">
-     <div class="col-xs-4"><button class="btn btn-block btn-primary">Like</button>
+     <div class="col-xs-4">
+       <button class="btn btn-block btn-primary">Like</button>
      </div>
-     <div class="col-xs-4"><button class="btn btn-block btn-info">Info</button>
+     <div class="col-xs-4">
+       <button class="btn btn-block btn-info">Info</button>
      </div>
-     <div class="col-xs-4"><button class="btn btn-block btn-danger">Delete</button>
+     <div class="col-xs-4">
+       <button class="btn btn-block btn-danger">Delete</button>
      </div>
 </div>
 
@@ -61,5 +64,113 @@
 </div>
 
 <!-- Add Font Awesome Icons to our Buttons -->
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+
+
+<button class="btn btn-block btn-primary">
+  <i class="fas fa-thumbs-up"></i>
+  Like
+</button>
+
+<!--Add Font Awesome Icons to all of our Buttons-->
+<!--Responsively Style Radio Buttons-->
+<!--evenly spread out across the page, regardless of how wide
+   the screen resolution is.-->
+
+
+   <form action="https://freecatphotoapp.com/submit-cat-photo">
+   <div class="row">
+    <div class="col-xs-6">
+      <label>
+        <input type="radio" name="indoor-outdoor"> Indoor
+      </label>
+    </div>
+    <div class="col-xs-6">
+      <label>
+        <input type="radio" name="indoor-outdoor"> Outdoor
+      </label>
+    </div>
+   </div>
+   
+
+<!--Responsively Style Checkboxes-->
+<div class="row">
+<div class="col-xs-4">
+  <label><input type="checkbox" name="personality"> Loving</label>
+</div>
+<div class="col-xs-4">
+  <label><input type="checkbox" name="personality"> Lazy</label>
+</div>
+<div class="col-xs-4">
+  <label><input type="checkbox" name="personality"> LoCrazyving</label>
+</div>
+</div>
+
+<!--Style Text Inputs as Form Controls-->
+
+<input class="form-control" type="text" placeholder="cat photo URL" required>
+<button class="btn btn-primary" type="submit">
+  <i class=" fa fa-paper-plane"></i>
+  Submit
+</button>
+
+<!--Line up Form Elements Responsively with Bootstrap-->
+
+<div class="row">
+<div class="col-xs-7">
+  <input type="text" class="form-control" placeholder="cat photo URL" required>
+</div>
+<div class="col-xs-5"><button type="submit" class="btn btn-primary">
+  <i class="fa fa-paper-plane"></i>
+   Submit</button>
+</div>
+</div>
+
+
+<!--Create a Bootstrap Headline-->
+
+<h3 class="text-center text-primary">jQuery Playground</h3>
+
+<!--House our page within a Bootstrap container-fluid div-->
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+</div>
+
+<!--Create a Bootstrap Row-->
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+<div class="row">
+  <div class="col-xs-6"></div>
+  <div class="col-xs-6"></div>
+</div>
+</div>
+
+
+
+<!--create Bootstrap Wells-->
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button id="target1"class="btn btn-default target">#target1</button>
+        <button id="target2"class="btn btn-default target">#target2</button>
+        <button id="target3"class="btn btn-default target">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button id="target4"class="btn btn-default target">#target4</button>
+        <button id="target5"class="btn btn-default target">#target5</button>
+        <button id="target6"class="btn btn-default target">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Create a Class to Target with jQuery Selectors-->
+
 
 
