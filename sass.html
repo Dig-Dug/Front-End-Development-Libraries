@@ -37,7 +37,7 @@ $text-color: red; <--variable
   width: 150px;
   height: 150px;
   background-color: green;
-@include border-radius(15px)  <--calling a mixon
+@include border-radius(15px); <--calling a mixin
 }
 
 <!--Use @if and @else to Add Logic To Your Styles-->
@@ -51,10 +51,10 @@ medium - 3px solid black
 heavy - 6px solid black
 If $val is not light, medium, or heavy, the border should be set to none.-->
 @mixin border-stroke($val){
-  @if $val == light { border: 1px solid black} 
-  @else if $val == medium { border: 3px solid black}
-  @else if $val == heavy{border: 6px solid black}
-  @else {border: none}
+  @if $val == light { border: 1px solid black;} 
+  @else if $val == medium { border: 3px solid black;}
+  @else if $val == heavy{border: 6px solid black;}
+  @else {border: none;}
 }
 
 <!--Use @for to Create a Sass Loop-->
@@ -69,3 +69,45 @@ If $val is not light, medium, or heavy, the border should be set to none.-->
 
 
 <!--Use @each to Map Over Items in a List-->
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+<!--MAP syntax-->
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+
+
+<!--answer-->
+@each $color in blue, black, red {
+  .#{blue-bg}
+  {background-color: blue;}
+.#{black-bg}
+  {background-color: black;}
+  .#{red-bg}
+  {background-color: red;}
+}
+
+<!--Apply a Style Until a Condition is Met with @while-->
+$x: 1;
+@while $x < 13 {
+  .col-#{$x} { width: 100%/12 * $x;}
+  $x: $x + 1;
+}
+
+<!--answer-->
+$x: 1;
+@while $x < 5{
+.text-1 {font-size: 15px; }
+.text-2 {font-size: 30px; }
+.text-3 {font-size: 45px; }
+.text-4 {font-size: 60px; }
+.text-5 {font-size: 75px; }
+$x: $x + 1;
+}
+
+<!--Split Your Styles into Smaller Chunks with Partials-->
+_mixins.scss <-file
+@import 'mixins' <- in other file
