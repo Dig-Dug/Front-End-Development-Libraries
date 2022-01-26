@@ -267,43 +267,28 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // Change code below this line //please outside the return
+     // Change code below this line
 if(this.state.display == true){
-<div>    <button onClick={this.toggleDisplay}>Toggle Display</button>
-     <h1>Displayed!</h1>
+  return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+         <h1>Displayed!</h1>
        </div>
-} else{
-console.log("3");
- <div>
+    );
+}else{
+    return (
+       <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>
         
        </div>
-}
-    return (
-        <div>
-          <button onClick={this.toggleDisplay}>Toggle Display</button>
-     
-       </div> 
     );
-  }
+  }}
 };
 
-/**if (isLoggedIn) {
-  button = <LogoutButton onClick={this.handleLogoutClick} />;
-} else {
-  button = <LoginButton onClick={this.handleLoginClick} />;
-}
-
-return (
-  <div>
-    <Greeting isLoggedIn={isLoggedIn} />
-    {button}
-  </div>
-); */
 
 
 //Use && for a More Concise Conditional------
-/* class MyComponent extends React.Component {
+class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -317,18 +302,15 @@ return (
     }));
   }
   render() {
-    // Change code below this line
-    {this.state.display  && <div> <button onClick={this.toggleDisplay}>Toggle Display</button><div>}
-    { this.state.display && <div> <button onClick={this.toggleDisplay}>Toggle Display</button><h1>Displayed!</h1></div>}      
-   
-    return (
+    // Change code below this line return {true} || {false}
+return (
        <div>
-         <button onClick={this.toggleDisplay}>Toggle Display</button>
-       
-       </div>
+  {this.state.display && <button onClick={this.toggleDisplay}>Toggle Display</button> &&<h1>Displayed!</h1>}
+  {<button onClick={this.toggleDisplay}>Toggle Display</button>}
+      </div>
     );
   }
-}; */
+};
 
 
 
@@ -351,8 +333,10 @@ class MyApp extends React.Component {
     return (
        <div>
         { /* Change code below this line */ }
-        <GetInput/> 
-        <RenderInput input={this.state.inputValue}/>
+  <GetInput value={this.state.inputValue }
+            handleChange={this.handleChange}/> 
+             
+  <RenderInput input={this.state.inputValue}/>
         { /* Change code above this line */ }
        </div>
     );

@@ -111,3 +111,16 @@ $x: $x + 1;
 <!--Split Your Styles into Smaller Chunks with Partials-->
 _mixins.scss <-file
 @import 'mixins' <- in other file
+
+
+<!--Extend One Set of CSS Styles to Another Element-->
+.info{
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important{
+@extend .info;   <--extend directive
+background-color: magenta;
+}
