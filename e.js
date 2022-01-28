@@ -8,6 +8,7 @@ const inputStyle = {
     constructor(props) {
       super(props);
       // Change code below this line
+      //first initialize state of CheckUserAge with input and userAge
       this.state = {
         input : "",
         userAge : ""
@@ -27,7 +28,7 @@ const inputStyle = {
         userAge: state.input
       }));
     }
-    render() {
+    render() { //3 constants
       const buttonOne = <button onClick={this.submit}>Submit</button>;
       const buttonTwo = <button>You May Enter</button>;
       const buttonThree = <button>You Shall Not Pass</button>;
@@ -42,8 +43,11 @@ const inputStyle = {
           />
           <br />
           {/* Change code below this line */}
-          {this.state.input ? buttonOne :  buttonThree?
-           this.state.userAge >= 18 : buttonThree? buttonTwo: buttonThree}
+          {/* pageLoading? submitButton(b1): false ? submitButton(b1) ?
+            age : false ? age : button3 ?*/}
+         {this.state.input ? this.state.userAge >= 18 
+                           : this.state.userAge < 18 ?
+           buttonOne :  buttonThree ? buttonTwo : buttonOne }
           {/* Change code above this line */}
         </div>
       );
