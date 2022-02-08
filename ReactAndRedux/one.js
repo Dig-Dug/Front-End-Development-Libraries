@@ -61,7 +61,8 @@ class DisplayMessages extends React.Component {
   //creator and include the message in the returned action.
   const addMessage = ()=>{ {
     return {
-      type : message
+        type : "ADD",
+        message: "message"
     }  
     }  }
  /**Then create a reducer called messageReducer()

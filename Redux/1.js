@@ -186,6 +186,9 @@ let count = 0;
 // Change code below this line
 const unsubscribe = store.subscribe(reducer)
 unsubscribe(count += 1)
+
+let count = 1;
+const addOne = () => (count += 1);
 // Change code above this line
 
 store.dispatch({type: ADD});
