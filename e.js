@@ -45,15 +45,16 @@ const inputStyle = {
           {/* Change code below this line */}
           {/* pageLoading? submitButton(b1): false ? submitButton(b1) ?
             age : false ? age : button3 ?*/}
-         {this.state.input ? this.state.userAge >= 18 
-                           : this.state.userAge < 18 ?
+{this.state.input ? this.state.userAge >= 18:this.state.userAge < 18 ?
            buttonOne :  buttonThree ? buttonTwo : buttonOne }
           {/* Change code above this line */}
         </div>
       );
     }
   }
-
+/**
+ * {this.state.input ? buttonThree : buttonOne   } <-Use this
+ */
 
   //Render Conditionally from Props--------------------------
 

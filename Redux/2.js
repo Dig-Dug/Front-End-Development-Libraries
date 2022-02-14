@@ -4,7 +4,17 @@ const RECEIVED_DATA = 'RECEIVED_DATA'
 
 const requestingData = () => { return {type: REQUESTING_DATA} }
 const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
-
+//Hint 1
+//Treat the dispatch argument as a function and pass the action
+// events in it.
+/**Hint 2
+The requestingData action event will be passed first. */
+/**Hint 3
+The receivedData action event will be passed after
+ the setTimeout function. */
+ /**Hint 4
+It is important that the data variable be
+ passed as an argument of receivedData. */
 const handleAsync = () => {
   return function(dispatch) {
     // Dispatch request action here
@@ -51,16 +61,25 @@ const store = Redux.createStore(
 
 ///Write a Counter with Redux----------------------------
 
-const INCREMENT = null; // Define a constant for increment action types
-const DECREMENT = null; // Define a constant for decrement action types
+const INCREMENT = 'INCREMENT'; // Define a constant for increment action types
+const DECREMENT = 'DECREMENT'; // Define a constant for decrement action types
 
-const counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
+const counterReducer = (state = defaultState ,action ) => {
+  switch(action.type){
+    case INCREMENT: return state + 1;
+    case DECREMENT: return state - 1 ;
+  }
+}; // Define the counter reducer which will increment or decrement the state based on the action it receives
 
-const incAction = null; // Define an action creator for incrementing
+const incAction = () => {
+  return type += 1;
+ }; // Define an action creator for incrementing
 
 const decAction = null; // Define an action creator for decrementing
 
-const store = null; // Define the Redux store here, passing in your reducers
+const store = Redux.createStore(
+  (state = 0) => state
+); // Define the Redux store here, passing in your reducers
 
 
 //Never Mutate State-------------------
