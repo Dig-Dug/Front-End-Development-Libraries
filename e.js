@@ -53,6 +53,7 @@ const inputStyle = {
     }
   }
 /**
+ * {this.state.userAge >= 18  ? buttonTwo : buttonOne? buttonOne: buttonThree  }
  * {this.state.input ? buttonThree : buttonOne   } <-Use this
  */
 
