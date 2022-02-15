@@ -166,7 +166,8 @@ const defaultState = {
   };
 
 
-  //Register a Store Listener-------------------------
+  //Register a Store Listener------------------------
+  //https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-register-a-store-listener/301446
   const ADD = 'ADD';
 
 const reducer = (state = 0, action) => {
@@ -185,10 +186,11 @@ let count = 0;
 
 // Change code below this line
 const unsubscribe = store.subscribe(reducer)
-unsubscribe(count += 1)
+unsubscribe() //callback function
+const addOne = () => (count += 1); //increase
 
-let count = 1;
-const addOne = () => (count += 1);
+
+store.subscribe(addOne); //1 2 3 pass function to method
 // Change code above this line
 
 store.dispatch({type: ADD});
@@ -249,8 +251,8 @@ const ADD_NOTE = 'ADD_NOTE';
 const notesReducer = (state = 'Initial State', action) => {
   switch(action.type) {
     // Change code below this line
-      case  ADD_NOTE: 
-      return addNoteText;
+    case ADD_NOTE:
+      return state = addNoteText;
     
     // Change code above this line
     default:
@@ -260,10 +262,10 @@ const notesReducer = (state = 'Initial State', action) => {
 
 const addNoteText = (note) => {
   // Change code below this line
-  note  = {
-    type : note,
-    text :'ioi9i'} 
-    
+  return  note = {
+    type: 'ADD_NOTE', 
+    text: note
+  }
   // Change code above this line
 };
 

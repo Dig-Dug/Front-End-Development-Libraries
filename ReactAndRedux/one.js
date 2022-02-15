@@ -26,11 +26,10 @@ class DisplayMessages extends React.Component {
     // Add handleChange() and submitMessage() methods here
 
         // Change code below this line
-        handleChange() {
-        this.setState({
-            input: this.input
-          })
-         }
+        handleChange(e) {
+          this.setState({
+          input: e.target.value})
+                 }
         
             submitMessage(){ //this.inputTitle.value = "";
                 this.setState({

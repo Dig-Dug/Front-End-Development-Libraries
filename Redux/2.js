@@ -139,7 +139,8 @@ const immutableReducer = (state = ['Do not mutate state!'], action) => {
     switch(action.type) {
       case 'REMOVE_ITEM':
         // Don't mutate state here or the tests will fail
-        return
+        return   {...state.slice(0,4)},
+                  console.log(state);
       default:
         return state;
     }
